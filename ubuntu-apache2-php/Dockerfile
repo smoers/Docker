@@ -18,7 +18,12 @@ RUN set -eux; \
   php7.2-xml \
   php7.2-mbstring \
   php7.2-zip \
-  libapache2-mod-php7.2
+  libapache2-mod-php7.2 \
+  mariadb-server
+
+#phpIpam
+RUN mkdir /var/www/phpipam
+COPY phpipam/* /var/www/phpipam/
 
 #supervisor configuratipon file
 RUN mkdir -p /var/log/supervisor
